@@ -14,8 +14,22 @@ metadata:
 # gws drive
 
 > **PREREQUISITE:** Ensure authentication is set up with `gws auth setup` and `gws auth login`. Encrypted credentials are saved automatically.
+> `gws auth setup` **requires `gcloud`** to be installed and authenticated first — see [references/setup.md](./references/setup.md).
 
 The `gws drive` command suite interacts with the Google Drive v3 API to manage files, folders, permissions, comments, shared drives, and revisions.
+
+## References
+
+| File | Read it when |
+|---|---|
+| [references/setup.md](./references/setup.md) | Installing `gws` or `gcloud` — Arch/AUR, Debian/Ubuntu APT repo, npm, and the full setup flow from scratch |
+| [references/auth.md](./references/auth.md) | OAuth client type, consent/test users, scopes, credential files, environment variables, security checklist |
+| [references/troubleshooting.md](./references/troubleshooting.md) | **Any error.** Every failure hit during setup and live command testing, verbatim, with cause and fix |
+| [references/gws-vs-gcloud.md](./references/gws-vs-gcloud.md) | Deciding whether the job belongs to `gws`, `gcloud`, or `rclone`; command surface; agent usage patterns |
+| [references/terminal-log.md](./references/terminal-log.md) | Matching an error against the exact wording seen on a real machine |
+
+The command surface is generated dynamically from Google's Discovery Service — don't guess
+flags. Inspect with `gws drive --help` and `gws schema drive.files.list`.
 
 ---
 
@@ -436,3 +450,4 @@ gws drive teamdrives get --params '{"teamDriveId": "<ID>"}'
 - Format JSON parameters strictly with valid JSON syntax (`--params '{"key": "value"}'`).
 - Shared drives must be empty before `drives delete` and you must be `organizer`.
 - After mass deletion, `storageQuota.usageInDrive` drops to `0` (verified).
+- Hit an error? Check [references/troubleshooting.md](./references/troubleshooting.md) before debugging — every failure seen on this setup is recorded there with its fix.

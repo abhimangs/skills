@@ -24,7 +24,7 @@ Multi-skill plugins kept whole — their skills reference sibling `scripts/`,
 
 | Skill | Description |
 |---|---|
-| [gws-drive](./gws-drive) | Google Drive v3 via the official `gws` CLI — files, permissions, folders, comments, revisions, shared drives, changes |
+| [gws-drive](./gws-drive) | Google Drive v3 via the official `gws` CLI — files, permissions, folders, comments, revisions, shared drives, changes. Includes `references/` covering install (Arch AUR / Debian APT / npm), OAuth setup, and every error hit during setup |
 | [emil-design-eng](./emil-design-eng) | Emil Kowalski's philosophy on UI polish, component design and animation |
 | [frontend-design](./frontend-design) | Distinctive, intentional visual design for new or reshaped UI |
 | [scrollcraft](./scrollcraft) | Scroll-driven interaction and animation design |
