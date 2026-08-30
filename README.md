@@ -44,6 +44,24 @@ Multi-skill plugins kept whole — their skills reference sibling `scripts/`,
 | [turnstile-spin](./turnstile-spin) | End-to-end Turnstile setup — widget creation, embed, server-side siteverify |
 | [web-perf](./web-perf) | Core Web Vitals audit via Chrome DevTools MCP — LCP, INP, CLS |
 
+## Browse
+
+`tree` is unusable here — 1972 entries. Two views instead:
+
+```sh
+# shape (27 lines)
+tree -L 1
+
+# skills per entry (25 lines)
+for d in */; do printf '%3d  %s\n' "$(find "$d" -name SKILL.md | wc -l)" "${d%/}"; done | sort -rn
+
+# every skill path (167 lines)
+find . -name SKILL.md | sed 's|/SKILL.md$||; s|^\./||' | sort
+```
+
+`tree --filelimit N` does not help: it clamps the root too, so 27 top-level
+entries collapse the whole listing to one line.
+
 ## Layout
 
 Standalone skills sit at the top level, one directory per skill, each with a
